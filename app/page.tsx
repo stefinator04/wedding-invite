@@ -1,13 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex min-h-screen items-center justify-center">
-      <div className="relative md:w-[50%]">
+    <>
+    <div className={`flex min-h-screen justify-center ${isOpen ? "items-start pt-[16vh]" : "items-center"}`}>
+      <div className={`relative md:w-[50%] ${isOpen ? "mb-[101vh]" : ""}`}>
         {!isOpen && (
           <>
             <p
@@ -51,18 +53,18 @@ export default function Home() {
         <img
           src="/images/flowerbranch.png"
           alt="Flower branch open"
-          style={{ transitionDelay: isOpen ? "150ms" : "0ms" }}
+          style={{ transitionDelay: isOpen ? "150ms" : "0ms", animation: "sway 4s ease-in-out infinite" }}
           className={`pointer-events-none absolute left-[51%] top-[40%] z-[6] w-[35%] -scale-x-100 -rotate-[30deg] transition-opacity duration-700 ease-in-out ${isOpen ? "opacity-100" : "opacity-0"}`}
         />
         <img
           src="/images/roses.png"
           alt="Roses"
-          style={{ transitionDelay: isOpen ? "350ms" : "0ms" }}
+          style={{ transitionDelay: isOpen ? "350ms" : "0ms", animation: "float-gentle-b 3.2s ease-in-out infinite" }}
           className={`pointer-events-none absolute left-[8%] top-[61%] z-[11] w-[28%] transition-opacity duration-700 ease-in-out ${isOpen ? "opacity-100" : "opacity-0"}`}
         />
         <div
-          style={{ transitionDelay: isOpen ? "300ms" : "0ms" }}
-          className={`absolute left-[6%] top-[75%] w-[57%] transition-all duration-700 ease-in-out ${isOpen ? "opacity-100" : "pointer-events-none translate-y-4 opacity-0"}`}
+          style={{ transitionDelay: isOpen ? "300ms" : "0ms", animation: "float-gentle-a 4s ease-in-out infinite" }}
+          className={`absolute left-[6%] top-[75%] w-[57%] transition-opacity duration-700 ease-in-out ${isOpen ? "opacity-100" : "pointer-events-none opacity-0"}`}
         >
           <img src="/images/invite.png" alt="Invitation" className="w-full" />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
@@ -87,8 +89,8 @@ export default function Home() {
           </div>
         </div>
         <div
-          style={{ transitionDelay: isOpen ? "200ms" : "0ms" }}
-          className={`absolute right-[6%] top-[63%] z-10 w-[56%] transition-all duration-700 ease-in-out ${isOpen ? "opacity-100" : "pointer-events-none translate-y-4 opacity-0"}`}
+          style={{ transitionDelay: isOpen ? "200ms" : "0ms", animation: "float-gentle-b 3.5s ease-in-out infinite" }}
+          className={`absolute right-[6%] top-[63%] z-10 w-[56%] transition-opacity duration-700 ease-in-out ${isOpen ? "opacity-100" : "pointer-events-none opacity-0"}`}
         >
           <img src="/images/location.png" alt="Location" className="w-full" />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-[#690d05]">
@@ -125,7 +127,7 @@ export default function Home() {
         <img
           src="/images/orangeflowers.png"
           alt="Orange flowers"
-          style={{ transitionDelay: isOpen ? "250ms" : "0ms" }}
+          style={{ transitionDelay: isOpen ? "250ms" : "0ms", animation: "float-gentle-a 3.8s ease-in-out infinite" }}
           className={`pointer-events-none absolute right-[9%] top-[103%] z-[11] w-[20%] transition-opacity duration-700 ease-in-out ${isOpen ? "opacity-100" : "opacity-0"}`}
         />
         <div
@@ -138,7 +140,7 @@ export default function Home() {
             style={{ animation: "spin-slow 20s linear infinite" }}
             className="w-full drop-shadow-lg"
           />
-          <div className="absolute inset-0 flex -translate-y-[1.5%] scale-[0.7] flex-col items-center justify-center text-center text-white">
+          <Link href="/rsvp" className="absolute inset-0 flex -translate-y-[1.5%] scale-[0.7] flex-col items-center justify-center text-center text-white no-underline">
             <p className="leading-none">
               <span
                 style={{ fontFamily: '"altesse-std-24pt", sans-serif', fontWeight: 400 }}
@@ -159,29 +161,100 @@ export default function Home() {
             >
               &gt;HERE&lt;
             </p>
-          </div>
+          </Link>
         </div>
+        <img
+          src="/images/large-placeholder.png"
+          alt="Large placeholder"
+          style={{ transitionDelay: isOpen ? "480ms" : "0ms" }}
+          className={`pointer-events-none absolute left-[15%] top-[135%] z-[3] w-[33%] -rotate-[14deg] transition-opacity duration-700 ease-in-out ${isOpen ? "opacity-100" : "opacity-0"}`}
+        />
         <img
           src="/images/polaroid-large.png"
           alt="Polaroid large"
-          style={{ transitionDelay: isOpen ? "500ms" : "0ms" }}
-          className={`absolute left-[13%] top-[132%] z-[4] w-[39%] -rotate-[14deg] drop-shadow-lg transition-all duration-700 ease-in-out ${isOpen ? "opacity-100" : "pointer-events-none translate-y-4 opacity-0"}`}
+          style={{ transitionDelay: isOpen ? "500ms" : "0ms", animation: "float-gentle-c 4.5s ease-in-out infinite" }}
+          className={`absolute left-[13%] top-[132%] z-[4] w-[39%] -rotate-[14deg] drop-shadow-lg transition-opacity duration-700 ease-in-out ${isOpen ? "opacity-100" : "pointer-events-none opacity-0"}`}
+        />
+        <img
+          src="/images/medium-placeholder.png"
+          alt="Medium placeholder"
+          style={{ transitionDelay: isOpen ? "580ms" : "0ms" }}
+          className={`pointer-events-none absolute right-[19%] top-[164%] z-[3] w-[27%] rotate-[15deg] transition-opacity duration-700 ease-in-out ${isOpen ? "opacity-100" : "opacity-0"}`}
         />
         <img
           src="/images/polaroid-medium.png"
           alt="Polaroid medium"
-          style={{ transitionDelay: isOpen ? "600ms" : "0ms" }}
-          className={`absolute right-[13%] top-[161%] z-[4] w-[42%] rotate-[15deg] drop-shadow-lg transition-all duration-700 ease-in-out ${isOpen ? "opacity-100" : "pointer-events-none translate-y-4 opacity-0"}`}
+          style={{ transitionDelay: isOpen ? "600ms" : "0ms", animation: "float-gentle-a 3.8s ease-in-out infinite" }}
+          className={`absolute right-[13%] top-[161%] z-[4] w-[42%] rotate-[15deg] drop-shadow-lg transition-opacity duration-700 ease-in-out ${isOpen ? "opacity-100" : "pointer-events-none opacity-0"}`}
         />
+        <img
+          src="/images/yellow-flower.png"
+          alt="Yellow flower"
+          style={{ transitionDelay: isOpen ? "620ms" : "0ms", animation: "float-gentle-c 3.4s ease-in-out infinite" }}
+          className={`pointer-events-none absolute right-[7%] top-[185%] z-[4] w-[30%] transition-opacity duration-700 ease-in-out ${isOpen ? "opacity-100" : "opacity-0"}`}
+        />
+        <div
+          style={{ transitionDelay: isOpen ? "640ms" : "0ms", animation: "float-gentle-c 3.6s ease-in-out infinite" }}
+          className={`pointer-events-none absolute left-[44%] top-[197%] z-[5] w-[37%] transition-opacity duration-700 ease-in-out ${isOpen ? "opacity-100" : "opacity-0"}`}
+        >
+          <img src="/images/attire.png" alt="Attire" className="w-full -scale-x-90" />
+          <div className="absolute inset-0 flex -translate-x-[0.2rem] -translate-y-[0.1rem] flex-col items-center justify-center text-center text-white">
+            <p className="leading-none">
+              <span
+                style={{ fontFamily: '"altesse-std-24pt", sans-serif', fontWeight: 400 }}
+                className="text-[clamp(1rem,7vw,5.3rem)]"
+              >
+                A
+              </span>
+              <span
+                style={{ fontFamily: '"canto-brush", sans-serif', fontWeight: 400 }}
+                className="text-[clamp(1rem,4.1vw,3.5rem)]"
+              >
+                TTIRE
+              </span>
+            </p>
+            <p
+              style={{ fontFamily: '"worthington-arcade", serif', fontWeight: 400 }}
+              className="mt-0.1 text-[clamp(0.6rem,1.5vw,0.9rem)] leading-tight"
+            >
+              INDIAN OR
+              <br />
+              AMERICAN
+              <br />
+              FORMAL
+            </p>
+          </div>
+        </div>
+        <div
+          style={{ animation: "float-gentle-b 4.2s ease-in-out infinite" }}
+          className={`absolute left-[22%] top-[195%] z-[6] w-[37%] -rotate-[5deg] transition-opacity duration-700 ease-in-out ${isOpen ? "opacity-100" : "pointer-events-none opacity-0"}`}
+        >
+          <img
+            src="/images/small-placeholder.png"
+            alt="Small placeholder"
+            className="pointer-events-none absolute left-[24%] top-[5%] w-[54%]"
+          />
+          <img
+            src="/images/polaroid-small.png"
+            alt="Polaroid small"
+            className="relative w-full drop-shadow-lg"
+          />
+        </div>
         <img
           src="/images/orangebranch.png"
           alt="Orange branch"
-          style={{ transitionDelay: isOpen ? "650ms" : "0ms" }}
+          style={{ transitionDelay: isOpen ? "650ms" : "0ms", animation: "sway 3s ease-in-out infinite" }}
           className={`pointer-events-none absolute right-[66%] top-[158%] z-[4] w-[30%] transition-opacity duration-700 ease-in-out ${isOpen ? "opacity-100" : "opacity-0"}`}
         />
+        <img
+          src="/images/vine.png"
+          alt="Vine"
+          style={{ transitionDelay: isOpen ? "680ms" : "0ms", animation: "sway-horizontal 3s ease-in-out infinite" }}
+          className={`pointer-events-none absolute left-[10%] top-[182%] z-[3] w-[20%] transition-opacity duration-700 ease-in-out ${isOpen ? "opacity-100" : "opacity-0"}`}
+        />
         <div
-          style={{ transitionDelay: isOpen ? "700ms" : "0ms" }}
-          className={`absolute left-[10%] top-[157%] z-[4] w-[57%] transition-all duration-700 ease-in-out ${isOpen ? "opacity-100" : "pointer-events-none translate-y-4 opacity-0"}`}
+          style={{ transitionDelay: isOpen ? "700ms" : "0ms", animation: "sway-horizontal 3s ease-in-out infinite" }}
+          className={`absolute left-[10%] top-[157%] z-[4] w-[57%] transition-opacity duration-700 ease-in-out ${isOpen ? "opacity-100" : "pointer-events-none opacity-0"}`}
         >
           <img src="/images/tag.png" alt="Tag" className="w-full" />
           <div className="absolute inset-0 flex -translate-x-[16%] -translate-y-[5.5%] scale-[0.53] flex-col items-center justify-center text-center text-[#690d05]">
@@ -209,5 +282,6 @@ export default function Home() {
         </div>
       </div>
     </div>
+  </>
   );
 }

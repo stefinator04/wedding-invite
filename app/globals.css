@@ -58,3 +58,48 @@ body {
     transform: rotate(360deg);
   }
 }
+
+@keyframes sway {
+  0%, 100% {
+    transform: translateX(0) rotate(0deg);
+  }
+  50% {
+    transform: translateX(6px) rotate(1.5deg);
+  }
+}
+
+@keyframes sway-horizontal {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+}
+
+@keyframes float-gentle-a {
+  0%, 100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -5px;
+  }
+}
+
+@keyframes float-gentle-b {
+  0%, 100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 3px -4px;
+  }
+}
+
+@keyframes float-gentle-c {
+  0%, 100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: -3px -6px;
+  }
+}
