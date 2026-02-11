@@ -16,17 +16,19 @@ export default function Home() {
               style={{ fontFamily: '"altesse-std-24pt", sans-serif', fontWeight: 400 }}
               className="absolute left-26/50 top-[21%] z-10 -translate-x-1/2 text-[clamp(2.5rem,6vw,3.5rem)]"
             >
-              <span className="inline-block animate-float">Introducing...</span>
+              <span className="inline-block" style={{ animation: "drift-horizontal 3s ease-in-out infinite" }}>Introducing...</span>
             </p>
             <img
               src="/images/flowerbranch.png"
               alt="Flower branch left"
-              className="pointer-events-none absolute left-[13%] top-58/100 z-10 w-38/100 -translate-y-1/2"
+              style={{ animation: "branch-front 3s ease-in-out infinite" }}
+              className="pointer-events-none absolute left-[13%] top-58/100 z-10 w-38/100"
             />
             <img
               src="/images/flowerbranch.png"
               alt="Flower branch right"
-              className="pointer-events-none absolute right-[13%] top-59/100 -z-10 w-38/100 -translate-y-8/10 -scale-x-100"
+              style={{ animation: "branch-back 3s ease-in-out infinite" }}
+              className="pointer-events-none absolute right-[13%] top-59/100 -z-10 w-38/100 -scale-x-100"
             />
           </>
         )}
